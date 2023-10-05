@@ -64,11 +64,11 @@ class NPCBuilder
             $skin = new Skin(uniqid(), $this->getType()->getImageData(), "", $this->getType()->getGeometryName(), $this->getType()->getGeometry());
             $nbt = CustomNPC::saveNBT($this->position);
             $skinTag = new CompoundTag("Skin");
-            $skinTag->setTag("Name", new StringTag($skin->getSkinId()));
-            $skinTag->setTag("Data", new ByteArrayTag($skin->getSkinData()));
-            $skinTag->setTag("CapeData", new ByteArrayTag($skin->getCapeData()));
-            $skinTag->setTag("GeometryName", new StringTag($skin->getGeometryName()));
-            $skinTag->setTag("GeometryData", new ByteArrayTag($skin->getGeometryData()));
+            $skinTag->setTag("Name", new StringTag("Name", $skin->getSkinId()));
+            $skinTag->setTag("Data", new ByteArrayTag("Data", $skin->getSkinData()));
+            $skinTag->setTag("CapeData", new ByteArrayTag("CapeData", $skin->getCapeData()));
+            $skinTag->setTag("GeometryName", new StringTag("GeometryName", $skin->getGeometryName()));
+            $skinTag->setTag("GeometryData", new ByteArrayTag("GeometryData", $skin->getGeometryData()));
             $nbt->setTag($skinTag);
             $npc = new CustomNPC($this->world, $nbt);
             foreach ($this->tags as $tag) {
