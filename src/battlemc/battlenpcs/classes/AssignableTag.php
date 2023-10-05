@@ -1,6 +1,7 @@
 <?php
 
 namespace battlemc\battlenpcs\classes;
+
 class AssignableTag
 {
 
