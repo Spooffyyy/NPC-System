@@ -1,5 +1,7 @@
 <?php
+
 namespace battlemc\battlenpcs\handler;
+
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
