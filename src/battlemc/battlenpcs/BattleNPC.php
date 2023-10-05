@@ -19,15 +19,15 @@ use pocketmine\Server;
 
 class BattleNPC extends PluginBase implements Listener{
 
-	public function onEnable(): void
-	{
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		if(!file_exists($this->getDataFolder() . "config.yml")){
-			$this->saveResource("config.yml");
-		}
-		$loader = new ConfigLoader();
-		$loader->load($this->getDataFolder());
-		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
-		EntityFactory::register(CustomNPC::class, true);
-	}
+    public function onEnable(): void {
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        if (!file_exists($this->getDataFolder() . "config.yml")) {
+            $this->saveResource("config.yml");
+        }
+        $loader = new ConfigLoader();
+        $loader->load($this->getDataFolder());
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
+
+        EntityFactory::getInstance()->register(CustomNPC::class, true);
+    }
 }
