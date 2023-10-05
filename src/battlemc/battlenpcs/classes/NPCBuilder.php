@@ -62,7 +62,7 @@ class NPCBuilder
     {
         if ($this->world instanceof World && $this->position instanceof Vector3 && $this->name !== null && $this->name !== "") {
             $skin = new Skin(uniqid(), $this->getType()->getImageData(), "", $this->getType()->getGeometryName(), $this->getType()->getGeometry());
-            $npc = new CustomNPC();
+            $npc = new CustomNPC($this->world, $this->position);
             $nbt = $npc->saveNBT();
             $skinTag = new CompoundTag("Skin");
             $skinTag->setTag("Name", new StringTag("Name", $skin->getSkinId()));
