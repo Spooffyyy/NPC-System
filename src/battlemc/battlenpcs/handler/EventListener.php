@@ -17,7 +17,7 @@ class EventListener implements Listener
 		if ($entity instanceof CustomNPC) {
 			if ($entity->hasHandler()) {
 				if (!$entity->getHandler()->onHit($entity, $event)) {
-					$event->setCancelled(true);
+					$event->cancel();
 				}
 			}
 		}
