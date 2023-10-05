@@ -15,8 +15,6 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\world\World;
-use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\Server;
 
 class BattleNPC extends PluginBase implements Listener{
