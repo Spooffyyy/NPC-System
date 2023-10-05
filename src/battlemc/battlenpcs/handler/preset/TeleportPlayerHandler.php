@@ -4,7 +4,7 @@ use battlemc\battlenpcs\handler\NPCEventHandler;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\math\Vector3;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class TeleportPlayerHandler extends NPCEventHandler
 {
