@@ -9,7 +9,7 @@ use battlemc\battlenpcs\entities\CustomNPC;
 use battlemc\battlenpcs\handler\EventListener;
 use battlemc\battlenpcs\tests\TestEventHandler;
 use battlemc\battlenpcs\utils\ConfigLoader;
-use pocketmine\entity\Entity;
+use pocketmine\entity\EntityFactory;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\player\Player;
@@ -27,6 +27,7 @@ class BattleNPC extends PluginBase implements Listener{
         $loader->load($this->getDataFolder());
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
-        Entity::addEntity(CustomNPC::class, true);
+        EntityFactory::register(CustomNPC::class, true);
+        EntityFactory::create(CustomNPC::class, $pos, $world);
     }
 }
