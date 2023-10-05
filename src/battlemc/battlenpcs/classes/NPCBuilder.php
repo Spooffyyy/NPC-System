@@ -82,14 +82,14 @@ class NPCBuilder
 
 	public function build(): CustomNPC
 	{
-		if ($this->level instanceof Level) {
+		if ($this->world instanceof World) {
 			if ($this->position instanceof Vector3) {
 				if ($this->name !== null && $this->name !== "") {
 					$skin = new Skin(uniqid(), $this->getType()->getImageData(), "", $this->getType()->getGeometryName(), $this->getType()->getGeometry());
 					$nbt = CustomNPC::createBaseNBT($this->position);
 					$nbt->setTag(new CompoundTag("Skin"));
 					self::injectSkin($nbt->getCompoundTag("Skin"), $skin);
-					$npc = new CustomNPC($this->level, $nbt);
+					$npc = new CustomNPC($this->world, $nbt);
 					foreach ($this->tags as &$tag) {
 						$npc->addTag($tag);
 					}
