@@ -6,7 +6,7 @@ use battlemc\battlenpcs\entities\CustomNPC;
 use battlemc\battlenpcs\handler\NPCEventHandler;
 use pocketmine\entity\Entity;
 use pocketmine\entity\Skin;
-use pocketmine\level\Level;
+use pocketmine\world\World;
 use pocketmine\math\Vector3;
 
 use InvalidArgumentException;
@@ -35,8 +35,8 @@ class NPCBuilder
 	 */
 	private $position;
 
-	/** @var Level */
-	private $level;
+	/** @var World */
+	private $world;
 
 
 	/**
@@ -62,9 +62,9 @@ class NPCBuilder
 		return $this;
 	}
 
-	public function setLevel(Level $level): self
+	public function setWorld(Level $level): self
 	{
-		$this->level = $level;
+		$this->world = $world;
 		return $this;
 	}
 
@@ -100,7 +100,7 @@ class NPCBuilder
 				}
 			}
 		}
-		throw new InvalidArgumentException("It seems at least one of three (Level, Position, Header ) required arguments for your NPC Build is missing");
+		throw new InvalidArgumentException("It seems at least one of three (World, Position, Header ) required arguments for your NPC Build is missing");
 	}
 
 	public static function injectSkin(CompoundTag $nbt, Skin $skin)
@@ -140,9 +140,9 @@ class NPCBuilder
 	/**
 	 * @return Level
 	 */
-	public function getLevel(): Level
+	public function getWorld(): world
 	{
-		return $this->level;
+		return $this->world;
 	}
 
 	/**
