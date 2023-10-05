@@ -2,15 +2,15 @@
 
 namespace battlemc\battlenpcs\utils;
 
+use pocketmine\plugin\Plugin;
 use battlemc\battlenpcs\caches\TagCache;
 use battlemc\battlenpcs\caches\TypeCache;
 use battlemc\battlenpcs\classes\AssignableTag;
 use battlemc\battlenpcs\classes\CustomType;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
-use pocketmine\utils\MainLogger;
 
-class ConfigLoader
+class ConfigLoader extends PluginBase
 {
 	public function load(string $path)
 	{
@@ -29,11 +29,11 @@ class ConfigLoader
 					$type->setName($name);
 					TypeCache::add($type);
 				} else {
-					MainLogger::getLogger()->warning("Could not find Skin File For Custom Entity \"" . $custom . "\"");
+					$this->getLogger()->info("Could not find Skin File For Custom Entity \"" . $custom . "\"");
 					continue;
 				}
 			} else {
-				MainLogger::getLogger()->warning("Could not find Geometry File For Custom Entity \"" . $custom . "\"");
+				$this->getLogger()->info("Could not find Geometry File For Custom Entity \"" . $custom . "\"");
 				continue;
 			}
 		}
