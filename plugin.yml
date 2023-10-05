@@ -1,6 +1,6 @@
 name: BattleNPC
 main: battlemc\battlenpcs\BattleNPC
-version: "1.1"
+version: "1.0"
 api: ["5.0.0"]
 author: "BattleMC Network, Terpz710"
 load: STARTUP
