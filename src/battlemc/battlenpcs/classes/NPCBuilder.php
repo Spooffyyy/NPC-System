@@ -62,7 +62,7 @@ class NPCBuilder
 		return $this;
 	}
 
-	public function setWorld(Level $level): self
+	public function setWorld(World $world): self
 	{
 		$this->world = $world;
 		return $this;
