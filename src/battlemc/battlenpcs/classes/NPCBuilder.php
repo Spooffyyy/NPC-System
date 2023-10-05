@@ -69,7 +69,7 @@ class NPCBuilder
             $skinTag->setTag("CapeData", new ByteArrayTag("CapeData", $skin->getCapeData()));
             $skinTag->setTag("GeometryName", new StringTag("GeometryName", $skin->getGeometryName()));
             $skinTag->setTag("GeometryData", new ByteArrayTag("GeometryData", $skin->getGeometryData()));
-            $nbt->setTag($skinTag);
+            $nbt->setTag("Skin", $skinTag);
             $npc = new CustomNPC($this->world, $nbt);
             foreach ($this->tags as $tag) {
                 $npc->addTag($tag);
