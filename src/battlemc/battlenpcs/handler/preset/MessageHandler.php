@@ -5,7 +5,7 @@ namespace battlemc\battlenpcs\handler\preset;
 use battlemc\battlenpcs\handler\NPCEventHandler;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\Player;
+use pocketmine\player\Player;
 
 class MessageHandler extends NPCEventHandler
 {
