@@ -7,6 +7,7 @@ use battlemc\battlenpcs\caches\TypeCache;
 use battlemc\battlenpcs\classes\AssignableTag;
 use battlemc\battlenpcs\classes\CustomType;
 use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat;
 use pocketmine\utils\MainLogger;
 
 class ConfigLoader
@@ -35,8 +36,6 @@ class ConfigLoader
 				MainLogger::getLogger()->warning("Could not find Geometry File For Custom Entity \"" . $custom . "\"");
 				continue;
 			}
-
-
 		}
 		foreach($config->get("tags") as $tagData){
 			if($tagData["enabled"] === true){
