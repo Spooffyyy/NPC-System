@@ -30,6 +30,6 @@ class BattleNPC extends PluginBase implements Listener{
 
         EntityFactory::getInstance()->register(CustomNPC::class, function ($nbt, $world) {
     return new CustomNPC($world, $nbt);
-});
+}, ["battlemc\BattleNPC"]);
     }
 }
