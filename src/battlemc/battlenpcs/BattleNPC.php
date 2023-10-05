@@ -27,6 +27,6 @@ class BattleNPC extends PluginBase implements Listener{
         $loader->load($this->getDataFolder());
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
-        Entity::registerEntity(CustomNPC::class, true);
+        Entity::registerEntityClass(CustomNPC::class, true);
     }
 }
