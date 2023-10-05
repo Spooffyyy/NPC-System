@@ -21,7 +21,7 @@ class TitleHandler extends NPCEventHandler
 	{
 		$player = $event->getDamager();
 		if ($player instanceof Player) {
-			$player->addTitle($this->getTitle(), $this->getSubtitle(), $this->getFadeIn(), $this->getStay(), $this->getFadeOut());
+			$player->sendTitle($this->getTitle(), $this->getSubtitle(), $this->getFadeIn(), $this->getStay(), $this->getFadeOut());
 		}
 		return false;
 	}
