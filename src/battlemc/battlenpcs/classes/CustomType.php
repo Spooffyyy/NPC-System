@@ -1,6 +1,7 @@
 <?php
 
 namespace battlemc\battlenpcs\classes;
+
 use pocketmine\entity\Skin;
 
 class CustomType
