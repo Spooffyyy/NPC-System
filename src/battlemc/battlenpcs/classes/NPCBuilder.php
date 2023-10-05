@@ -138,7 +138,7 @@ class NPCBuilder
 	}
 
 	/**
-	 * @return Level
+	 * @return World
 	 */
 	public function getWorld(): world
 	{
